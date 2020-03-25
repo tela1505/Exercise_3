@@ -1,0 +1,27 @@
+<!-- Use the base template -->
+{% extends "base.html" %}
+
+<!-- Content for this page -->
+{% block content %}
+    <body>
+        <div class="container">
+            <form action="" method="post" novalidate>
+                <div class="form-group">
+                    <p>{{ form.username.label }}<br>{{ form.username(size=32) }}</p>
+                </div>
+                <div class="form-group">
+                    <p>{{ form.email.label }}<br>{{ form.email(size=32) }}</p>
+                </div>
+                <div class="form-group">
+                    <p>{{ form.password.label }}<br>{{ form.password }}</p>
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Keep me logged in</label>
+                </div>
+              <p>{{ form.submit() }}</p>
+            </form>
+        </div>
+    </body>
+{% endblock %}
+

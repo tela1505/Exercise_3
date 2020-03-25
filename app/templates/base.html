@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet"  href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        {#SOURCE JS LIBRARY:
+        W3schools.com. (2019). Tryit Editor v3.6. [online]
+        Available at: https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_filters_table
+        [Accessed 13 Feb. 2020].
+        {#‌#}
+        <script src="../static/js/filtertable.js"></script>
+        <title>Rain Blog</title>
+   </head>
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand"><img src="../static/img/rain-logo-1.png" alt="Rain Blog Logo"></a>
+                </div>
+                <br>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ url_for('main.home') }}">Home</a></li>
+                    <li class="active"><a href="{{ url_for('main.forecast') }}">Posts</a></li>
+                    <li class="active"><a href="{{ url_for('main.signup') }}">Sign Up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+   <body>
+        <!-- Begin page content -->
+        <main role="main" class="container-fluid">
+        <!-- Child pages add page specific content here -->
+        {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Posts{% endblock %}
+{% block content %}
+{% if forecasts|length > 0 %}
+
+<div class="container" id="search-bar-div">
+    <input id="myInput" type="text" placeholder="Filter">
+</div>
+<table class="table" id="myTable">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Post</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for forecast in forecasts %}
+    <tr>
+        <td>{{ forecast }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+    {% for forecast in forecasts %}
+    <tr>
+        <td>{{ forecast }}</td>
+    </tr>
+    {% endfor %}
+{% endif %}
+{% endblock %}
